@@ -22,67 +22,86 @@ import Swiper from './swiper.dom' // no dom lib imported
 const getProps = () => {
   return {
     direction: {
-      type: String
+      type: String,
+      default: 'horizontal'
     },
     touchEventsTarget: {
-      type: String
+      type: String,
+      default: 'container'
     },
     initialSlide: {
-      type: Number
+      type: Number,
+      default: 0
     },
     speed: {
-      type: Number
+      type: Number,
+      default: 300
     },
     // autoplay
     autoplay: {
-      type: [Boolean, Number]
+      type: [Boolean, Number],
+      default: false
     },
     autoplayDisableOnInteraction: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     autoplayStopOnLast: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     // To support iOS's swipe-to-go-back gesture (when being used in-app,with UIWebView).
     iOSEdgeSwipeDetection: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     iOSEdgeSwipeThreshold: {
-      type: Number
+      type: Number,
+      default: 20
     },
     // Free mode
     freeMode: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     freeModeMomentum: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     freeModeMomentumRatio: {
-      type: Number
+      type: Number,
+      default: 1
     },
     freeModeMomentumBounce: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     freeModeMomentumBounceRatio: {
-      type: Number
+      type: Number,
+      default: 1
     },
     freeModeSticky: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     freeModeMinimumVelocity: {
-      type: Number
+      type: Number,
+      default: 0.02
     },
     // Autoheight
     autoHeight: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     // Set wrapper width
     setWrapperSize: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     // Virtual Translate
     virtualTranslate: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     // Effects
     // Parallax
@@ -91,199 +110,257 @@ const getProps = () => {
     // Hash Navigation
     // Breakpoints
     breakpoints: {
-      type: Object
+      type: Object,
+      default: undefined
     },
     // Slides grid
     spaceBetween: {
-      type: Number
+      type: Number,
+      default: 0
     },
     slidesPerView: {
-      type: [Number, String]
+      type: [Number, String],
+      default: 1
     },
     slidesPerColumn: {
-      type: Number
+      type: Number,
+      default: 1
     },
     slidesPerColumnFill: {
-      type: String
+      type: String,
+      default: 'column'
     },
     slidesPerGroup: {
-      type: Number
+      type: Number,
+      default: 1
     },
     centeredSlides: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     slidesOffsetBefore: {
-      type: Number
+      type: Number,
+      default: 0
     }, // in px
     slidesOffsetAfter: {
-      type: Number
+      type: Number,
+      default: 0
     }, // in px
     // Round length
     roundLengths: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     // Touches
     touchRatio: {
-      type: Number
+      type: Number,
+      default: 1
     },
     touchAngle: {
-      type: Number
+      type: Number,
+      default: 45
     },
     simulateTouch: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     shortSwipes: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     longSwipes: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     longSwipesRatio: {
-      type: Number
+      type: Number,
+      default: 0.5
     },
     longSwipesMs: {
-      type: Number
+      type: Number,
+      default: 300
     },
     followFinger: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     onlyExternal: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     threshold: {
-      type: Number
+      type: Number,
+      default: 0
     },
     touchMoveStopPropagation: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     // Unique Navigation Elements
     uniqueNavElements: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     // Pagination
     pagination: {
-      type: Boolean // Whether or not show pagination, default false
+      type: Boolean, // Whether or not show pagination, default false
+      default: false
     },
     paginationElement: {
-      type: String
+      type: String,
+      default: 'span'
     },
     paginationClickable: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     paginationHide: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     paginationBulletRender: {
-      type: Function
+      type: Function,
+      default: null
     },
     paginationProgressRender: {
-      type: Function
+      type: Function,
+      default: null
     },
     paginationFractionRender: {
-      type: Function
+      type: Function,
+      default: null
     },
     paginationCustomRender: {
-      type: Function
+      type: Function,
+      default: null
     },
     paginationType: {
-      type: String
+      type: String,
+      default: 'bullets'
     }, // 'bullets' or 'progress' or 'fraction' or 'custom'
     // Resistance
     resistance: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     resistanceRatio: {
-      type: Number
+      type: Number,
+      default: 0.85
     },
     // Next/prev buttons
     nextButton: {
       // type: [String,Object],
-      type: Boolean // Whether or not show nextButton, default false
+      type: Boolean, // Whether or not show nextButton, default false
+      default: false
     },
     prevButton: {
       // type: [String,Object],
-      type: Boolean // Whether or not show prevButton, default false
+      type: Boolean, // Whether or not show prevButton, default false
+      default: false
     },
     // Progress
     watchSlidesProgress: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     watchSlidesVisibility: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     // Cursor
     grabCursor: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     // Clicks
     preventClicks: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     preventClicksPropagation: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     slideToClickedSlide: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     // Lazy Loading
     lazyLoading: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     lazyLoadingInPrevNext: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     lazyLoadingInPrevNextAmount: {
-      type: Number
+      type: Number,
+      default: 1
     },
     lazyLoadingOnTransitionStart: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     // Images
     preloadImages: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     updateOnImagesReady: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     // loop
     loop: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     loopAdditionalSlides: {
-      type: Number
+      type: Number,
+      default: 0
     },
     loopedSlides: {
-      type: Number
+      type: Number,
+      default: null
     },
     // Control
     // Swiping/no swiping
     allowSwipeToPrev: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     allowSwipeToNext: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     swipeHandler: {
-      type: String
+      type: String,
+      default: null
     }, // '.swipe-handler',
     noSwiping: {
-      type: Boolean
+      type: Boolean,
+      default: true
     },
     noSwipingClass: {
-      type: String
+      type: String,
+      default: 'vux-swiper-no-swiping'
     },
     // NS
     // Observer
     observer: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     observeParents: {
-      type: Boolean
+      type: Boolean,
+      default: false
     },
     // Accessibility
     // Callbacks
     runCallbacksOnInit: {
-      type: Boolean
+      type: Boolean,
+      default: true
     }
     // Callbacks:
   }
@@ -292,32 +369,37 @@ const getProps = () => {
 export default {
   props: getProps(),
   ready () {
-    let keys = Object.keys(getProps())
-    let _props = {}
-    keys.forEach((item) => {
-      this[item] && (_props[item] = this[item])
-    })
-    Object.assign(_props, {
-      // Use Boolean type
-      pagination: _props.pagination && this.$el.querySelector('.vux-swiper-pagination'),
-      nextButton: _props.nextButton && this.$el.querySelector('.vux-swiper-button-next'),
-      prevButton: _props.prevButton && this.$el.querySelector('.vux-swiper-button-prev'),
-      // init callback
-      onInit: this._events['init'] && ((swiper) => { // fixd onInit
-        this.$emit('init', swiper)
+    this.initSwiper()
+  },
+  methods: {
+    initSwiper () {
+      let keys = Object.keys(getProps())
+      let _props = {}
+      keys.forEach((item) => {
+        _props[item] = this[item]
       })
-    })
-    // init
-    this.swiper = new Swiper(this.$el, _props)
-    // bind callbacks event
-    for (let k in this._events) {
-      if (k && !k.startsWith('hook')) {
-        let e = k.replace(/(-\w)/g, function (s) {
-          return s.toUpperCase().substring(1)
+      Object.assign(_props, {
+        // Use Boolean type
+        pagination: _props.pagination && this.$el.querySelector('.vux-swiper-pagination'),
+        nextButton: _props.nextButton && this.$el.querySelector('.vux-swiper-button-next'),
+        prevButton: _props.prevButton && this.$el.querySelector('.vux-swiper-button-prev'),
+        // init callback
+        onInit: this._events['init'] && ((swiper) => { // fixd onInit
+          this.$emit('init', swiper)
         })
-        this.swiper.on(e, (swiper, evt) => {
-          this.$emit(k, swiper, evt)
-        })
+      })
+      // init
+      this.swiper = new Swiper(this.$el, _props)
+      // bind callbacks event
+      for (let k in this._events) {
+        if (k && !k.startsWith('hook')) {
+          let e = k.replace(/(-\w)/g, function (s) {
+            return s.toUpperCase().substring(1)
+          })
+          this.swiper.on(e, (swiper, evt) => {
+            this.$emit(k, swiper, evt)
+          })
+        }
       }
     }
   },
